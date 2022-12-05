@@ -1,4 +1,4 @@
-# Pacman Clone
+# Pacman Clone :computer:
 
 ## Um Caso de Estudo
 
@@ -30,4 +30,3 @@ No canal: [Servet Gulnaroglu](youtube.com/watch?v=GXlckaGr0Eo)
 ### index.html
 
 É composto por um elemento canvas de 500x500 pontos.
-Possui duas imagens oculptas
