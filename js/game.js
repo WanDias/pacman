@@ -1,6 +1,6 @@
 const canvas = document.getElementById("canvas");
 const canvasContext = canvas.getContext("2d");
-const pacmanFrames = document.getElementById("animation");
+const pacmanFrames = document.getElementById("animations");
 const ghostFrames = document.getElementById("ghosts");
 
 // Cria o canva
@@ -15,6 +15,11 @@ let wallColor = "#342DCA";
 let wallInnerColor = "black";
 let wallSpaceWidth = oneBlockSize / 1.5;
 let wallOffset = (oneBlockSize - wallSpaceWidth) / 2;
+
+const DIRECTION_RIGHT = 4;
+const DIRECTION_UP = 3;
+const DIRECTION_LEFT = 2;
+const DIRECTION_BOTTOM = 1;
 
 // Mapa para criação das paredes
 let map = [
@@ -50,12 +55,13 @@ let gameLoop = () => {
 
 let update = () => {
   //todo
+  pacman.moveProcess();
 };
 
 let draw = () => {
-  //todo
   createRect(0, 0, canvas.width, canvas.height, "black");
   drawWalls();
+  pacman.draw();
 };
 
 let gameInterval = setInterval(gameLoop, 1000 / fps);
@@ -114,3 +120,16 @@ let drawWalls = () => {
     }
   }
 };
+
+let createNewPacman = () => {
+  pacman = new Pacman(
+    oneBlockSize,
+    oneBlockSize,
+    oneBlockSize,
+    oneBlockSize,
+    oneBlockSize / 5
+  );
+};
+
+createNewPacman();
+gameLoop();

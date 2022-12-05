@@ -9,13 +9,17 @@
   </head>
   <body>
     <canvas id="canvas" width="500" height="500"></canvas>
-    <div id="div">
-      <img src="./assets/animations.gif" />
-      <img src="./assets/ghost.png" />
+    <div style="display: none">
+      <img
+        id="animations"
+        src="./assets/animations.gif"
+        width="140"
+        height="20" />
+      <img id="ghosts" src="./assets/ghost.png" width="140" height="20" />
     </div>
 
-    <script id="animations" src="./js/ghost.js"></script>
-    <script id="ghosts" src="./js/pacman.js"></script>
+    <script src="./js/ghost.js"></script>
+    <script src="./js/pacman.js"></script>
     <script src="./js/game.js"></script>
   </body>
 </html>
