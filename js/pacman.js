@@ -6,6 +6,7 @@ class Pacman {
     this.height = height;
     this.speed = speed;
     this.direction = DIRECTION_RIGHT;
+    this.nextDirection = this.direction;
     this.currentFrame = 1;
     this.frameCount = 7;
 
@@ -20,10 +21,20 @@ class Pacman {
 
     if (this.checkCollision()) {
       this.moveBackWards();
+      return;
     }
   }
 
-  eat() {}
+  eat() {
+    for (let i = 0; i < map.length; i++) {
+      for (let j = 0; j < map[0].length; j++) {
+        if (map[i][j] == 2 && this.getMapX() == j && this.getMapY() == i) {
+          map[i][j] = 3;
+          score++;
+        }
+      }
+    }
+  }
 
   moveBackWards() {
     switch (this.direction) {
@@ -40,7 +51,7 @@ class Pacman {
         break;
 
       case DIRECTION_BOTTOM:
-        this.x -= this.speed;
+        this.y -= this.speed;
         break;
     }
   }
@@ -60,7 +71,7 @@ class Pacman {
         break;
 
       case DIRECTION_BOTTOM:
-        this.x += this.speed;
+        this.y += this.speed;
         break;
     }
   }
@@ -74,13 +85,25 @@ class Pacman {
     ) {
       return true;
     }
-
     return false;
   }
 
   checkGhostCollision() {}
 
-  changeDirectionIfPossible() {}
+  changeDirectionIfPossible() {
+    if (this.direction == this.nextDirection) return;
+
+    let tempDirection = this.direction;
+    this.direction = this.nextDirection;
+    this.moveForWards();
+
+    if (this.checkCollision()) {
+      this.moveBackWards();
+      this.direction = tempDirection;
+    } else {
+      this.moveBackWards();
+    }
+  }
 
   changeAnimation() {
     this.currentFrame =
