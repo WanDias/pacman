@@ -12,4 +12,11 @@ No canal: [Servet Gulnaroglu](https://www.youtube.com/watch?v=GXlckaGr0Eoo)
 
 ### Screeshots
 
-(!star.png)
+Início do Jogo
+![Start Game](./assets/start.png)
+
+Game Over
+![Game Over](./assets/over.png)
+
+Vencedor
+![Vencedor](./assets/win.png)
