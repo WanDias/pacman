@@ -4,29 +4,12 @@
 
 origem: @servetgulnaroglu
 
-No canal: [Servet Gulnaroglu](youtube.com/watch?v=GXlckaGr0Eo)
-
-### Diretórios e Arquivos
-
-- assets
-
-  - animations.gig
-  - ghosts.png
-  - sample.png
-
-- js
-  - game.js
-  - ghost.js
-  - pacman.js
-
-* index.html
-
-* style.css
+No canal: [Servet Gulnaroglu](https://www.youtube.com/watch?v=GXlckaGr0Eoo)
 
 ### Caracteristicas
 
-É um pequeno projeto para o aprendizado de Javascript
+É um pequeno projeto para o aprendizado de Javascript. :computer:
 
-### index.html
+### Screeshots
 
-É composto por um elemento canvas de 500x500 pontos.
+(!star.png)
